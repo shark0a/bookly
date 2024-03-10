@@ -14,13 +14,13 @@ class CustomSearchTextFiled extends StatelessWidget {
       decoration: InputDecoration(
         
         enabledBorder: OutlineInputBorder(
-          borderSide: BorderSide(
+          borderSide: const BorderSide(
             color: Colors.white,
           ),
           borderRadius: BorderRadius.circular(16),
         ),
         hintText: "Search",
-        suffixIcon: Icon(
+        suffixIcon: const Icon(
           FontAwesomeIcons.magnifyingGlass,
           size: 20,
         ),
