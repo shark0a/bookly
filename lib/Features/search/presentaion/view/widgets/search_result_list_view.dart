@@ -1,4 +1,4 @@
-import 'package:bookly/Features/Home/presentation/views/widget/best_sellar_list_view_item.dart';
+// import 'package:bookly/Features/Home/presentation/views/widget/newset_books_list_view_item.dart';
 import 'package:flutter/material.dart';
 
 class SearchResultListView extends StatelessWidget {
@@ -11,7 +11,7 @@ class SearchResultListView extends StatelessWidget {
             padding: EdgeInsets.zero,
             itemCount: 30,
             itemBuilder: (context, index) {
-              return const BookListViewItem();
+              // return  NewsetBookListViewItem(bookmodel:  ,);
             }));
   }
 }

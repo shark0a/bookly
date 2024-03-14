@@ -1,4 +1,4 @@
-import 'package:bookly/Features/Home/presentation/views/widget/best_seller_list_view.dart';
+import 'package:bookly/Features/Home/presentation/views/widget/newset_books_list_view.dart';
 import 'package:bookly/Features/Home/presentation/views/widget/custom_appbar.dart';
 import 'package:bookly/Features/Home/presentation/views/widget/feature_list_viwe_build.dart';
 import 'package:bookly/core/utils/styles.dart';
@@ -23,7 +23,7 @@ class HomeViewBody extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.only(left: 20),
                   child: Text(
-                    "Best Seller",
+                    "Newset Books",
                     style: Styles.titlemeduim,
                   ),
                 ),
@@ -33,10 +33,9 @@ class HomeViewBody extends StatelessWidget {
           ),
         ),
         SliverFillRemaining(
-          child: BestSellerListViwe(),
+          child: NewsetBooksListViwe(),
         ),
       ],
     );
   }
 }
-
