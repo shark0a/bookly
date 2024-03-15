@@ -4,7 +4,11 @@ import 'package:flutter/material.dart';
 class BookingRate extends StatelessWidget {
   const BookingRate({
     super.key,
+    required this.rate,
+    required this.count,
   });
+  final int rate;
+  final int count;
 
   @override
   Widget build(BuildContext context) {
@@ -14,15 +18,15 @@ class BookingRate extends StatelessWidget {
         const SizedBox(
           height: 6.3,
         ),
-        const Text(
-          "4.8  ",
+        Text(
+          rate.toString(),
           style: Styles.textStyle16,
         ),
         const SizedBox(
           height: 6.3,
         ),
         Text(
-          "(2300)",
+          "  ($count)",
           style: Styles.textStyle14.copyWith(fontWeight: FontWeight.w200),
         ),
       ],

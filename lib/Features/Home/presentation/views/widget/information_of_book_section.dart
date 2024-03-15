@@ -33,7 +33,7 @@ class InformationOfBookSection extends StatelessWidget {
       const Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          BookingRate(),
+          BookingRate(count: 4, rate: 222),
         ],
       ),
       const SizedBox(
