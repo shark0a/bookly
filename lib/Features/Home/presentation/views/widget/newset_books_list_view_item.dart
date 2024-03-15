@@ -71,14 +71,14 @@ class NewsetBookListViewItem extends StatelessWidget {
                       ),
                       Row(
                         children: [
-                          Text(
+                          const Text(
                             'free',
                             style: Styles.textStyle20,
                           ),
-                          Spacer(),
+                          const Spacer(),
                           BookingRate(
                               count: bookmodel.volumeInfo.ratingsCount ?? 0,
-                              rate:bookmodel.volumeInfo.averageRating??0),
+                              rate: bookmodel.volumeInfo.averageRating ?? 0),
                         ],
                       ),
                     ],
