@@ -1,24 +1,24 @@
 part of 'similers_books_cubit.dart';
 
-abstract class SimilersBooksState extends Equatable {
-  const SimilersBooksState();
+abstract class SimilarBooksState extends Equatable {
+  const SimilarBooksState();
 
   @override
   List<Object> get props => [];
 }
 
-class SimilersBooksInitial extends SimilersBooksState {}
+class SimilarBooksInitial extends SimilarBooksState {}
 
-class SimilersBooksLoading extends SimilersBooksState {}
+class SimilarBooksLoading extends SimilarBooksState {}
 
-class SimilersBooksFaluire extends SimilersBooksState {
+class SimilarBooksFaluire extends SimilarBooksState {
   final String errmessage;
 
-  const SimilersBooksFaluire(this.errmessage);
+  const SimilarBooksFaluire(this.errmessage);
 }
 
-class SimilersBooksSuccess extends SimilersBooksState {
+class SimilarBooksSuccess extends SimilarBooksState {
   final List<BookModel> books;
 
-const  SimilersBooksSuccess(this.books);
+  const SimilarBooksSuccess(this.books);
 }

@@ -5,7 +5,6 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:bookly/core/utils/app_router.dart';
 import 'package:go_router/go_router.dart';
-
 class NewsetBookListViewItem extends StatelessWidget {
   const NewsetBookListViewItem({
     super.key,
@@ -35,7 +34,8 @@ class NewsetBookListViewItem extends StatelessWidget {
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(12),
                         child: CachedNetworkImage(
-                          imageUrl: bookmodel.volumeInfo.imageLinks!.thumbnail,
+                          imageUrl:
+                              bookmodel.volumeInfo.imageLinks?.thumbnail ?? '',
                           fit: BoxFit.fill,
                           errorWidget: (context, url, error) =>
                               const Icon(Icons.error),
@@ -55,7 +55,7 @@ class NewsetBookListViewItem extends StatelessWidget {
                         height: 3,
                       ),
                       Text(
-                        bookmodel.volumeInfo.title!,
+                        bookmodel.volumeInfo.title ?? ' ',
                         style: Styles.textStyle20,
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
@@ -63,7 +63,7 @@ class NewsetBookListViewItem extends StatelessWidget {
                       const SizedBox(
                         height: 3,
                       ),
-                      Text(bookmodel.volumeInfo.authors![0],
+                      Text(bookmodel.volumeInfo.authors?[0] ?? ' ',
                           style: Styles.textStyle14
                               .copyWith(fontWeight: FontWeight.w200)),
                       const SizedBox(

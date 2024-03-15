@@ -5,13 +5,13 @@ import 'package:equatable/equatable.dart';
 
 part 'similers_books_state.dart';
 
-class SimilersBooksCubit extends Cubit<SimilersBooksState> {
-  SimilersBooksCubit(this.homerepo) : super(SimilersBooksInitial());
+class SimilarBooksCubit extends Cubit<SimilarBooksState> {
+  SimilarBooksCubit(this.homerepo) : super(SimilarBooksInitial());
   final HomeRepo homerepo;
-  Future<void> fetchSimillerBooks() async {
-    emit(SimilersBooksLoading());
-    var result = await homerepo.fetchSimillerBooks();
-    result.fold((faliure) => {emit(SimilersBooksFaluire(faliure.errMessage))},
-        (books) => {emit(SimilersBooksSuccess(books))});
+  Future<void> fetchSimilarBooks({required String category}) async {
+    emit(SimilarBooksLoading());
+    var result = await homerepo.fetchSimilarBooks(category: category);
+    result.fold((faliure) => {emit(SimilarBooksFaluire(faliure.errMessage))},
+        (books) => {emit(SimilarBooksSuccess(books))});
   }
 }
