@@ -26,7 +26,7 @@ abstract class AppRouter {
       GoRoute(
         path: kDetailpage,
         builder: (context, state) =>
-            BookDetailsView(bookModel: state.extra as BookModel),
+            BookDetailsView(bookModel: state.extra! as BookModel),
       )
     ],
   );

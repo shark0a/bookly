@@ -1,4 +1,5 @@
 import 'package:bookly/Features/Home/presentation/manger/similer_books_cubits/similers_books_cubit.dart';
+import 'package:bookly/Features/Home/presentation/views/widget/custom_book_image.dart';
 import 'package:bookly/core/utils/app_router.dart';
 import 'package:bookly/core/utils/assets.dart';
 import 'package:bookly/core/utils/styles.dart';
@@ -37,20 +38,15 @@ class YouCanLikeSection extends StatelessWidget {
                           scrollDirection: Axis.horizontal,
                           itemBuilder: (context, index) {
                             return InkWell(
-                              onTap: () { 
-                                GoRouter.of(context)
-                                    .push(AppRouter.kDetailpage , extra:  state.books[index]) ;   },
-                              child: Container(
-                                width: 100,
-                                decoration: const BoxDecoration(
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(1)),
-                                  image: DecorationImage(
-                                    image: AssetImage(AssetsData.test),
-                                  ),
-                                ),
-                              ),
-                            );
+                                onTap: () {
+                                  GoRouter.of(context).push(
+                                      AppRouter.kDetailpage,
+                                      extra: state.books[index]);
+                                },
+                                child: CustomBookImage(
+                                    urlimag: state.books[index].volumeInfo
+                                            .imageLinks?.thumbnail ??
+                                        ''));
                           }),
                     ));
               } else if (state is SimilarBooksFaluire) {
