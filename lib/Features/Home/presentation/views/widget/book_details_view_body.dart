@@ -15,7 +15,7 @@ final BookModel bookModel;
       children: [
        const DetailsAppBar(),
          InformationOfBookSection( bookModel: bookModel),
-         YouCanLikeSection(),
+         const YouCanLikeSection(),
       ],
     );
   }
