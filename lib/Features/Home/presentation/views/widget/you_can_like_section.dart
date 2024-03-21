@@ -30,10 +30,11 @@ class YouCanLikeSection extends StatelessWidget {
             builder: (context, state) {
               if (state is SimilarBooksSuccess) {
                 return SizedBox(
-                    height: 180,
+                    height: 150,
                     child: AspectRatio(
-                      aspectRatio: 2 / 1,
+                      aspectRatio: 3 / 1,
                       child: ListView.builder(
+                          itemCount: state.books.length,
                           scrollDirection: Axis.horizontal,
                           itemBuilder: (context, index) {
                             return InkWell(
@@ -42,10 +43,14 @@ class YouCanLikeSection extends StatelessWidget {
                                       AppRouter.kDetailpage,
                                       extra: state.books[index]);
                                 },
-                                child: CustomBookImage(
-                                    urlimag: state.books[index].volumeInfo
-                                            .imageLinks?.thumbnail ??
-                                        ''));
+                                child: Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 10),
+                                  child: CustomBookImage(
+                                      urlimag: state.books[index].volumeInfo
+                                              .imageLinks?.thumbnail ??
+                                          ''),
+                                ));
                           }),
                     ));
               } else if (state is SimilarBooksFaluire) {
