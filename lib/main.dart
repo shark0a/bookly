@@ -1,5 +1,5 @@
 import 'package:bookly/Features/Home/presentation/manger/feature_books_cuibts/feature_books_cubit.dart';
-import 'package:bookly/Features/Home/presentation/manger/newt_books_cubits/newset_books_cubit.dart';
+import 'package:bookly/Features/Home/presentation/manger/newset_books_cubits/newset_books_cubit.dart';
 import 'package:bookly/Features/Home/presentation/manger/similer_books_cubits/similers_books_cubit.dart';
 import 'package:bookly/Features/Home/repos/home_repo_implement.dart';
 import 'package:bookly/constant.dart';
