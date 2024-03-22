@@ -3,6 +3,7 @@ import 'package:bookly/Features/Home/presentation/views/widget/booking_rating.da
 import 'package:bookly/Features/Home/presentation/views/widget/custom_book_image.dart';
 import 'package:bookly/core/utils/styles.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class InformationOfBookSection extends StatelessWidget {
   const InformationOfBookSection({super.key, required this.bookModel});
@@ -23,6 +24,7 @@ class InformationOfBookSection extends StatelessWidget {
       ),
       const SizedBox(height: 14),
       Text(
+        overflow: TextOverflow.ellipsis,
         bookModel.volumeInfo.title ?? ' Failures in Loading title',
         style: Styles.textStyle30.copyWith(fontFamily: "Regular"),
       ),
@@ -62,19 +64,29 @@ class InformationOfBookSection extends StatelessWidget {
               style: Styles.textStyle16.copyWith(color: Colors.black),
             )),
           ),
-          Container(
-            width: 150,
-            height: 48,
-            decoration: const BoxDecoration(
-              color: Color.fromRGBO(239, 130, 98, 30),
-              borderRadius: BorderRadius.only(
-                  topRight: Radius.circular(15),
-                  bottomLeft: Radius.circular(15)),
-            ),
-            child: const Center(
-              child: Text(
-                "Free preview",
-                style: Styles.textStyle16,
+          GestureDetector(
+            onTap: () async {
+              Uri uri = Uri.parse(bookModel.volumeInfo.previewLink!);
+              if (await canLaunchUrl(uri)) {
+                launchUrl(uri);
+              } else {
+                throw Exception('Could not launch $uri');
+              }
+            },
+            child: Container(
+              width: 150,
+              height: 48,
+              decoration: const BoxDecoration(
+                color: Color.fromRGBO(239, 130, 98, 30),
+                borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(15),
+                    bottomLeft: Radius.circular(15)),
+              ),
+              child: const Center(
+                child: Text(
+                  "Free preview",
+                  style: Styles.textStyle16,
+                ),
               ),
             ),
           ),

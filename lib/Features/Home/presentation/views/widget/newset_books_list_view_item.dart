@@ -18,7 +18,7 @@ class NewsetBookListViewItem extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: InkWell(
         onTap: () {
-          GoRouter.of(context).push(AppRouter.kDetailpage);
+          GoRouter.of(context).push(AppRouter.kDetailpage, extra: bookmodel);
         },
         child: SizedBox(
           height: 115,
